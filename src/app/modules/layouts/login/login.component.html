@@ -1,0 +1,41 @@
+<div class="container" appLoader [showLoading]="showLoading">
+  <div class="row">
+    <div class="col-12 header">
+      <app-header [isSecuredLayout]="false"></app-header>
+    </div>
+    <div class="col-12 body">
+      <div class="row align-content-center login-container">
+        <form [formGroup]="loginForm" (ngSubmit)="login()">
+          <div class="col">
+            <mat-form-field class="full-width">
+              <mat-label>Email</mat-label>
+              <input matInput name="email" formControlName="email">
+              <mat-error
+                *ngIf="loginForm.get('email').hasError('email') && loginForm.touched">
+                Invalid Email
+              </mat-error>
+              <mat-error
+                *ngIf="loginForm.get('email').hasError('required') && loginForm.touched">
+                Email required
+              </mat-error>
+            </mat-form-field>
+          </div>
+          <div class="col">
+            <mat-form-field class="full-width">
+              <mat-label>Password</mat-label>
+              <input matInput type="password" name="password" formControlName="password">
+              <mat-error
+                *ngIf="loginForm.get('password').hasError('required') && loginForm.touched">
+                Password required
+              </mat-error>
+            </mat-form-field>
+          </div>
+          <div class="col py-4 justify-content-center">
+            <button mat-raised-button type="submit">LOGIN</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+</div>

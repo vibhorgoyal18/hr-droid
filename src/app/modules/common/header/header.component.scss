@@ -1,0 +1,51 @@
+.dropdown-menu {
+  margin: .5rem 0 0;
+  right: 0;
+  left: auto;
+  min-width: auto;
+}
+
+.dropdown-toggle::after {
+  display: none;
+}
+
+.navbar {
+  height: 100%;
+}
+
+.fa {
+  color: white;
+}
+
+.navbar-toggler {
+  border-color: dodgerblue;
+}
+
+button:focus {
+  outline: none;
+}
+
+.navbar-collapse {
+  padding-left: 15px;
+}
+
+#user-icon-header{
+  width: 30px;
+  height: 30px;
+  display: block;
+  border-radius: 50%;
+  vertical-align: middle;
+  line-height: 30px;
+}
+
+.sidebar-toggler{
+  cursor: pointer;
+  font-size: 30px;
+  color: white;
+  transition: 500ms;
+}
+
+.sidebar-toggler:hover{
+  font-size: 30.5px;
+  color: sandybrown;
+}
