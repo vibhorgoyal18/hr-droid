@@ -1,4 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
+import {SideNavService} from '../side-nav/side-nav.service';
 
 @Component({
   selector: 'app-header',
@@ -8,12 +9,15 @@ import {Component, Input, OnInit} from '@angular/core';
 export class HeaderComponent implements OnInit {
 
   @Input() isSecuredLayout = false;
-  isNavbarCollapsed = true;
-
-  constructor() {
+  isSideNavDisplayed: boolean;
+  constructor(private sideNavService: SideNavService) {
   }
 
   ngOnInit() {
   }
 
+    showHideSideNav() {
+    this.isSideNavDisplayed = !this.isSideNavDisplayed;
+    this.sideNavService.isSideNavDisplayed.next(this.isSideNavDisplayed);
+  }
 }

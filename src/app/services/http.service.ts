@@ -35,7 +35,7 @@ export class HttpService {
     }
   }
 
-  get = (urlPath: string, responseDataModel: any, params = {}) => new Promise((resolve, reject) => {
+  get = (urlPath: string, params = {}) => new Promise((resolve, reject) => {
     return this.httpClient.get(this.apiBaseURL + urlPath, {
       headers: this.httpHeader(),
       params

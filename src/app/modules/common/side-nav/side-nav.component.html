@@ -1,5 +1,12 @@
-<div class="container side-nav-bg bg-white"></div>
-<div class="container side-nav-items bg-azure">
-
+<div class="container side-nav-bg bg-white" *ngIf="isDisplayed"></div>
+<div class="container side-nav-items bg-azure" *ngIf="isDisplayed">
+    <ng-template ngFor let-menuItem [ngForOf]="menuItems" let-index="index">
+        <a
+                class="ripple"
+                title="{{menuItem.title}}"
+                class.active="{{menuItem.isActive}}"
+                routerLink="{{menuItem.route}}"
+           >{{menuItem.title}}</a>
+    </ng-template>
 </div>
 

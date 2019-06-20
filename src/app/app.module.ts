@@ -6,7 +6,6 @@ import {HttpService} from './services/http.service';
 import {HttpClientModule} from '@angular/common/http';
 import {ToastrModule} from 'ngx-toastr';
 import {AppRoutingModule} from './app-routing.module';
-import { SideNavComponent } from './modules/common/side-nav/side-nav.component';
 import {AuthGuardService} from './services/auth-guard.service';
 
 @NgModule({
