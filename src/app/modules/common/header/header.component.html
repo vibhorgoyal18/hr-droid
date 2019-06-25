@@ -1,20 +1,26 @@
-<nav class="navbar navbar-expand-md bg-dodger-blue navbar-dark">
-  <!-- Brand -->
-  <button (click)="showHideSideNav()"><i class="fa fa-bars px-2 sidebar-toggler" [hidden]="!isSecuredLayout"></i></button>
-  <a class="navbar-brand" href="#">Mydesq HR</a>
+<nav class="navbar navbar-expand-md bg-blue navbar-dark">
+    <!-- Brand -->
+    <button (click)="showHideSideNav()"><i class="fa fa-bars px-2 sidebar-toggler" [hidden]="!isSecuredLayout"></i>
+    </button>
+    <a class="navbar-brand" href="#">Mydesq HR</a>
 
-  <button *ngIf="isSecuredLayout" class="navbar-toggler" type="button" data-toggle="collapse"
-          data-target="#navbar-items">
-    <span class="fa fa-bars"></span>
-  </button>
+    <button *ngIf="isSecuredLayout" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbar-items">
+        <span class="fa fa-bars"></span>
+    </button>
 
-  <div *ngIf="isSecuredLayout" class="collapse navbar-collapse bg-dodger-blue" id="navbar-items">
-    <ul class="navbar-nav ml-auto">
-      <li class="nav-item">
-        <a class="nav-link text-white" routerLink="/home/user">
-          <span id="user-icon-header" class="bg-sea-green text-center">VG</span>
-        </a>
-      </li>
-    </ul>
-  </div>
+    <div *ngIf="isSecuredLayout" class="collapse navbar-collapse bg-blue" id="navbar-items">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+                <a class="nav-link" routerLink="/user">
+                    <span
+                            id="user-icon-header"
+                            class="bg-white color-blue text-center"
+                    >
+                        {{userFirstName}}
+                    </span>
+                </a>
+            </li>
+        </ul>
+    </div>
 </nav>

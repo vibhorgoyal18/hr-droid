@@ -10,8 +10,8 @@
   background-color: sandybrown !important;
 }
 
-.bg-dodger-blue {
-  background-color: dodgerblue !important;
+.bg-blue {
+  background-color: #1DA1F2 !important;
 }
 
 .bg-azure {
@@ -30,8 +30,8 @@
   color: sandybrown !important;
 }
 
-.color-dodger-blue {
-  background-color: dodgerblue !important;
+.color-blue {
+  color: #1DA1F2 !important;
 }
 
 .color-medium-aqua-marine {
@@ -39,15 +39,15 @@
 }
 
 .mat-card {
-  box-shadow: 0 2px 1px -1px dodgerblue, 0 1px 1px 0 dodgerblue, 0 1px 3px 0 dodgerblue !important;
+  box-shadow: 0 2px 1px -1px #1DA1F2, 0 1px 1px 0 #1DA1F2, 0 1px 3px 0 #1DA1F2 !important;
 }
 
 .mat-form-field.mat-focused .mat-form-field-label {
-  color: dodgerblue !important;
+  color: #1DA1F2 !important;
 }
 
 .mat-raised-button {
-  box-shadow: 0 3px 1px -2px dodgerblue, 0 2px 2px 0 dodgerblue, 0 1px 5px 0 dodgerblue !important;
+  box-shadow: 0 3px 1px -2px #1DA1F2, 0 2px 2px 0 #1DA1F2, 0 1px 5px 0 #1DA1F2 !important;
 }
 
 button:focus {
@@ -55,5 +55,5 @@ button:focus {
 }
 
 .mat-form-field.mat-focused .mat-form-field-ripple {
-  background-color: dodgerblue !important;
+  background-color: #1DA1F2 !important;
 }

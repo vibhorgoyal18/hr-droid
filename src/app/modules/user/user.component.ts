@@ -19,7 +19,7 @@ export class UserComponent implements OnInit {
             {
                 title: 'Info',
                 isActive: true,
-                route: 'home/user/info'
+                route: '/user/info'
             }
         ];
         this.sideNavService.sideNavObjects.next(this.sideNavObject);
