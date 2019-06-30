@@ -47,7 +47,7 @@ export class LoginComponent implements OnInit {
                 this.toastrService.success('Login Successful');
                 await this.router.navigate(['']);
             } catch (error) {
-                this.toastrService.error(error);
+                this.toastrService.error('Login failed');
             } finally {
                 this.showLoading = false;
             }

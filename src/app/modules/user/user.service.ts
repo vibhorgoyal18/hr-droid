@@ -1,12 +1,12 @@
 import {Injectable} from '@angular/core';
 import {HttpService} from '../../services/http.service';
-import {Subject} from 'rxjs';
+import {BehaviorSubject, Subject} from 'rxjs';
 import {UserInfoModel} from '../../models/user.model';
 
 @Injectable()
 export class UserService {
 
-    public userInfo: Subject<UserInfoModel> = new Subject();
+    public userInfo: BehaviorSubject<UserInfoModel> = new BehaviorSubject(null);
 
     constructor(private httpService: HttpService) {
     }
@@ -20,7 +20,7 @@ export class UserService {
             .then((userInfo: UserInfoModel) => {
                 this.userInfo.next(userInfo);
             })
-            .catch( error => {
+            .catch(error => {
                 console.log(error);
             });
     }

@@ -9,7 +9,6 @@ export class LoginService {
 
     constructor(
         private httpService: HttpService,
-        private userService: UserService
     ) {
     }
 
