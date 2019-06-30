@@ -1,15 +1,24 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {UserService} from '../user.service';
+import {UserInfoModel} from '../../../models/user.model';
 
 @Component({
-  selector: 'app-user-info',
-  templateUrl: './user-info.component.html',
-  styleUrls: ['./user-info.component.scss']
+    selector: 'app-user-info',
+    templateUrl: './user-info.component.html',
+    styleUrls: ['./user-info.component.scss']
 })
 export class UserInfoComponent implements OnInit {
 
-  constructor() { }
+    userInfo: UserInfoModel;
 
-  ngOnInit() {
-  }
+    constructor(private userService: UserService) {
+    }
 
+    ngOnInit() {
+
+        this.userService.userInfo.subscribe(data => {
+            this.userInfo = data;
+            console.log(this.userInfo);
+        });
+    }
 }

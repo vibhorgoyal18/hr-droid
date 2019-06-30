@@ -13,4 +13,15 @@ export class UserService {
 
     async addUser() {
     }
+
+    async getLoggedInUserInfo() {
+
+        await this.httpService.get('user/me/info')
+            .then((userInfo: UserInfoModel) => {
+                this.userInfo.next(userInfo);
+            })
+            .catch( error => {
+                console.log(error);
+            });
+    }
 }

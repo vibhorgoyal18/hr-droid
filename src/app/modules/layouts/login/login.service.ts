@@ -14,10 +14,9 @@ export class LoginService {
     }
 
     login = (credentials: AuthRequestModel) => new Promise((resolve, reject) => {
-        this.httpService.post('user/login', credentials)
+        this.httpService.post('api-auth/obtain-token', credentials)
             .then((data: AuthResponseModel) => {
                     localStorage.setItem('token', data.token);
-                    this.userService.userInfo.next(data.user);
                     resolve();
                 },
                 error => {

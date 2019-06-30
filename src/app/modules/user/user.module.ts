@@ -3,6 +3,7 @@ import {UserRoutingModule} from './user.routing.module';
 import {UserComponent} from './user.component';
 import {UserInfoComponent} from './user-info/user-info.component';
 import {MatCardModule} from '@angular/material';
+import {CommonModule} from '@angular/common';
 
 @NgModule({
     declarations: [
@@ -12,6 +13,7 @@ import {MatCardModule} from '@angular/material';
     imports: [
         UserRoutingModule,
         MatCardModule,
+        CommonModule,
     ],
     exports: [],
     providers: [],

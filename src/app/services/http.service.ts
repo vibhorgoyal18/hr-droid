@@ -16,18 +16,14 @@ export class HttpService {
             const token = localStorage.getItem('token');
             if (token) {
                 return {
-                    headers: {
-                        'content-Type': '*/*',
-                        'Access-Control-Allow-Origin': '*',
-                        Authorization: 'MYD ' + token
-                    }
+                    'content-Type': '*/*',
+                    Authorization: 'MYD ' + token,
+                    Accept: '*/*'
                 };
             } else {
                 return {
-                    headers: {
-                        'content-Type': '*/*',
-                        'Access-Control-Allow-Origin': '*'
-                    }
+                    'content-Type': '*/*',
+                    Accept: '*/*'
                 };
             }
         } catch (err) {
