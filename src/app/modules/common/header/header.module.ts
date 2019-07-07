@@ -4,6 +4,7 @@ import {CommonModule} from '@angular/common';
 import {RouterModule} from '@angular/router';
 import {SideNavService} from '../side-nav/side-nav.service';
 import {UserService} from '../../user/user.service';
+import {MatTooltipModule} from '@angular/material';
 
 @NgModule({
     declarations: [
@@ -11,7 +12,8 @@ import {UserService} from '../../user/user.service';
     ],
     imports: [
         RouterModule,
-        CommonModule
+        CommonModule,
+        MatTooltipModule
 
     ],
     exports: [HeaderComponent],

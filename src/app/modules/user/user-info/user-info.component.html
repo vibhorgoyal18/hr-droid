@@ -1,4 +1,4 @@
-<div class="container py-3">
+<div class="container py-3" appLoader [showLoading]="showLoading">
     <mat-card>
         <mat-card-header class="color-blue">User Info</mat-card-header>
         <mat-card-content>
@@ -9,7 +9,7 @@
                     </div>
                     :
                     <div class="col-md-9">
-                        {{userInfo.id}}
+                        {{userInfo.employee_id}}
                     </div>
                     <div class="col-md-2">
                         Email
@@ -33,11 +33,27 @@
                         {{userInfo.last_name}}
                     </div>
                     <div class="col-md-2">
+                        Designation
+                    </div>
+                    :
+                    <div class="col-md-9">
+                        {{userInfo.designation}}
+                    </div>
+                    <div class="col-md-2">
                         Role
                     </div>
                     :
                     <div class="col-md-9">
                         {{userInfo.role}}
+                    </div>
+                    <div class="col-md-2">
+                        Reporting Manager
+                    </div>
+                    :
+                    <div class="col-md-9">
+                        <a routerLink="/user/info/{{userInfo.reporting_manager.employee_id}}">
+                        {{userInfo.reporting_manager.first_name}} {{userInfo.reporting_manager.last_name}}
+                    </a>
                     </div>
                 </div>
             </div>

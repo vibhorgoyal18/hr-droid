@@ -38,18 +38,27 @@ button:focus {
   line-height: 30px;
 }
 
-.sidebar-toggler{
+.sidebar-toggler.animate{
   cursor: pointer;
-  font-size: 30px;
+  font-size: 20px;
   color: white;
   transition: 500ms;
 }
 
-.sidebar-toggler:hover{
-  font-size: 30.5px;
+.sidebar-toggler.animate:hover{
+  font-size: 20.5px;
   color: grey;
 }
 button{
   background-color: inherit;
   border: none;
+}
+
+.sidebar-toggler.disabled{
+  font-size: 20px;
+  color: #a8a8a8;
+}
+
+.sidebar-toggler{
+  padding-top: 4px;
 }

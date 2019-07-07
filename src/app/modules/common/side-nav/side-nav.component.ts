@@ -9,8 +9,8 @@ import {SideNavModel} from '../../../models/side-nav.model';
 })
 export class SideNavComponent implements OnInit {
 
-    isDisplayed: boolean;
-    menuItems: SideNavModel[];
+    isDisplayed = false;
+    menuItems: SideNavModel;
 
     constructor(private sideNavService: SideNavService) {
     }
@@ -21,4 +21,7 @@ export class SideNavComponent implements OnInit {
         this.sideNavService.sideNavObjects.subscribe(sideNavObjects => this.menuItems = sideNavObjects);
     }
 
+    hideSideNav() {
+        this.isDisplayed = false;
+    }
 }

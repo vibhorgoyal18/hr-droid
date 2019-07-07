@@ -2,13 +2,18 @@ import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {environment} from '../../environments/environment';
 import {ResponseModel} from '../models/response.model';
+import {Router} from '@angular/router';
+import {ToastrService} from 'ngx-toastr';
 
 @Injectable()
 export class HttpService {
 
     private apiBaseURL = environment.apiBaseURL;
 
-    constructor(private httpClient: HttpClient) {
+    constructor(private httpClient: HttpClient,
+                private router: Router,
+                private toastrService: ToastrService
+    ) {
     }
 
     private httpHeader(): any {
@@ -40,6 +45,13 @@ export class HttpService {
                 resolve(response.data);
             },
             error => {
+                if (error.status === 401) {
+                    this.router.navigate(['login'])
+                        .then(() => {
+                            this.toastrService.info('Session expired. Please login again');
+                            localStorage.removeItem('token');
+                        });
+                }
                 reject(error.error.message);
             });
     });
@@ -53,6 +65,13 @@ export class HttpService {
                 resolve(response.data);
             },
             error => {
+                if (error.status === 401) {
+                    this.router.navigate(['login'])
+                        .then(() => {
+                            this.toastrService.info('Session expired. Please login again');
+                            localStorage.removeItem('token');
+                        });
+                }
                 reject(error.error.message);
             }
         );

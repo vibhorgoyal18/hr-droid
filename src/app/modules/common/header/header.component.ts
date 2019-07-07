@@ -14,6 +14,8 @@ export class HeaderComponent implements OnInit {
     isSideNavDisplayed: boolean;
     public userFirstName = '';
     public userLastName = '';
+    isSideNavToggleActive: boolean;
+    toggleButtonClass: string;
 
     constructor(
         private sideNavService: SideNavService,
@@ -24,10 +26,15 @@ export class HeaderComponent implements OnInit {
     ngOnInit() {
         this.userService.userInfo.subscribe((data: UserInfoModel) => {
             if (!(data === null)) {
-                this.userFirstName = data.first_name.charAt(0);
-                this.userLastName = data.last_name.charAt(0);
+                this.userFirstName = data.first_name;
+                this.userLastName = data.last_name;
             }
         });
+        this.sideNavService.isSideNavToggleActive
+            .subscribe(isSideNavToggleActive => {
+                this.isSideNavToggleActive = isSideNavToggleActive;
+                this.toggleButtonClass = this.isSideNavToggleActive ? 'animate' : 'disabled';
+            });
     }
 
     showHideSideNav() {

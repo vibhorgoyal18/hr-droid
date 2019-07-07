@@ -1,6 +1,13 @@
 <nav class="navbar navbar-expand-md bg-blue navbar-dark">
     <!-- Brand -->
-    <button (click)="showHideSideNav()"><i class="fa fa-bars px-2 sidebar-toggler" [hidden]="!isSecuredLayout"></i>
+    <button (click)="showHideSideNav()" [disabled]="!isSideNavToggleActive">
+        <i
+                class="fa fa-bars px-2 sidebar-toggler"
+                [hidden]="!isSecuredLayout"
+                [ngClass]="toggleButtonClass"
+        >
+
+        </i>
     </button>
     <a class="navbar-brand" href="#">Mydesq HR</a>
 
@@ -12,12 +19,17 @@
     <div *ngIf="isSecuredLayout" class="collapse navbar-collapse bg-blue" id="navbar-items">
         <ul class="navbar-nav ml-auto">
             <li class="nav-item">
-                <a class="nav-link" routerLink="/user">
+                <a class="nav-link color-white" routerLink="/user/all">
+                    Employees
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" [matTooltip]="userFirstName + ' ' + userLastName" routerLink="/user/info/me">
                     <span
                             id="user-icon-header"
                             class="bg-white color-blue text-center"
                     >
-                        {{userFirstName}}{{userLastName}}
+                        {{userFirstName.charAt(0)}}{{userLastName.charAt(0)}}
                     </span>
                 </a>
             </li>
