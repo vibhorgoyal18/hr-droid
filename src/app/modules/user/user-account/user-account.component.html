@@ -1,0 +1,46 @@
+<div class="container py-3" appLoader [showLoading]="showLoading">
+    <mat-card>
+        <mat-card-header class="color-blue">Account Details</mat-card-header>
+        <mat-card-content>
+            <div class="container">
+                <div class="row" *ngIf="accountDetails">
+                    <div class="col-md-2 ">
+                        Account Name
+                    </div>
+                    :
+                    <div class="col-md-9">
+                        {{accountDetails.account_name}}
+                    </div>
+                    <div class="col-md-2">
+                        Account Number
+                    </div>
+                    :
+                    <div class="col-md-9">
+                        {{accountDetails.account_number}}
+                    </div>
+                    <div class="col-md-2">
+                        IFSC Code
+                    </div>
+                    :
+                    <div class="col-md-9">
+                        {{accountDetails.ifsc}}
+                    </div>
+                    <div class="col-md-2">
+                        Bank Name
+                    </div>
+                    :
+                    <div class="col-md-9">
+                        {{accountDetails.bank_name}}
+                    </div>
+                    <div class="col-md-2">
+                        Branch Name
+                    </div>
+                    :
+                    <div class="col-md-9">
+                        {{accountDetails.branch_name}}
+                    </div>
+                </div>
+            </div>
+        </mat-card-content>
+    </mat-card>
+</div>

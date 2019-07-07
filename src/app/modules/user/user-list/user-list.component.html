@@ -1,0 +1,46 @@
+<div class="container" appLoader [showLoading]="showLoading">
+    <div class="row py-3 px-3 justify-content-end" [hidden]="!isAdmin">
+        <button mat-raised-button class="color-sea-green">Add Employee</button>
+    </div>
+    <table class="table table-striped">
+        <thead>
+        <tr class="color-blue">
+            <th scope="col">#</th>
+            <th scope="col">ID</th>
+            <th scope="col">Name</th>
+            <th scope="col">Email</th>
+            <th scope="col">Designation</th>
+            <th scope="col">Reporting Manager</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let user of allUserInfo">
+            <th scope="row">{{ allUserInfo.indexOf(user) + 1 | number}}</th>
+            <td id="user-id">
+                <a routerLink="/user/info/{{user.employee_id}}">{{user.employee_id | number}}</a>
+            </td>
+            <td>
+                <a routerLink="/user/info/{{user.employee_id}}">{{ user.first_name}} {{user.last_name}}</a>
+            </td>
+            <td>
+                <a routerLink="/user/info/{{user.employee_id}}">{{ user.email}}</a>
+            </td>
+            <td>{{user.designation}}</td>
+            <td id="reporting-manager">
+                <a routerLink="/user/info/{{user.reporting_manager.employee_id}}">{{ user.reporting_manager.first_name}} {{ user.reporting_manager.last_name}}</a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+
+    <!--    <div class="d-flex justify-content-between p-2">-->
+    <!--        <ngb-pagination [collectionSize]="collectionSize" [(page)]="page" [pageSize]="pageSize">-->
+    <!--        </ngb-pagination>-->
+
+    <!--        <select class="custom-select" style="width: auto" [(ngModel)]="pageSize">-->
+    <!--            <option [ngValue]="2">2 items per page</option>-->
+    <!--            <option [ngValue]="4">4 items per page</option>-->
+    <!--            <option [ngValue]="6">6 items per page</option>-->
+    <!--        </select>-->
+    <!--    </div>-->
+</div>

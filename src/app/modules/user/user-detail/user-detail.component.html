@@ -1,0 +1,75 @@
+<div class="container py-3" appLoader [showLoading]="showLoading">
+    <mat-card>
+        <mat-card-header class="color-blue">User Details</mat-card-header>
+        <mat-card-content>
+            <div class="container">
+                <div class="row" *ngIf="userDetails">
+                    <div class="col-md-2 col-sm-11">
+                        Contact Number
+                    </div>
+                    <div class="col-md-1 col-sm-1 text-left">:</div>
+                    <div class="col-md-9 col-sm-12">
+                        {{userDetails.basic_details.contact}}
+                    </div>
+                    <div class="col-md-2 col-sm-11">
+                        Emergency Contact Number
+                    </div>
+                    <div class="col-md-1 col-sm-1 text-left">:</div>
+                    <div class="col-md-9 col-sm-12">
+                        {{userDetails.basic_details.emergency_contact}}
+                    </div>
+                    <div class="col-md-2 col-sm-11">
+                        Date of Birth
+                    </div>
+                    <div class="col-md-1 col-sm-1 text-left">:</div>
+                    <div class="col-md-9 col-sm-12">
+                        {{userDetails.basic_details.date_of_birth}}
+                    </div>
+                    <div class="col-md-2 col-sm-11">
+                        Aadhaar Card Number
+                    </div>
+                    <div class="col-md-1 col-sm-1 text-left">:</div>
+                    <div class="col-md-9 col-sm-12">
+                        {{userDetails.basic_details.aadhaar_number}}
+                    </div>
+                    <div class="col-md-2 col-sm-11">
+                        PAN Card Number
+                    </div>
+                    <div class="col-md-1 col-sm-1 text-left">:</div>
+                    <div class="col-md-9 col-sm-12">
+                        {{userDetails.basic_details.pan_number}}
+                    </div>
+                    <div class="col-md-2 col-sm-11">
+                        Personal Email
+                    </div>
+                    <div class="col-md-1 col-sm-1 text-left">:</div>
+                    <div class="col-md-9 col-sm-12">
+                        {{userDetails.basic_details.personal_mail_id}}
+                    </div>
+                    <div class="col-md-2 col-sm-11" *ngIf="residentialAddress">
+                        Residential Address
+                    </div>
+                    <div class="col-md-1 col-sm-1 text-left" *ngIf="residentialAddress">:</div>
+                    <div class="col-md-9 col-sm-12" *ngIf="residentialAddress">
+                        {{residentialAddress.house_number}}, {{residentialAddress.street_name}}
+                        , {{residentialAddress.locality}}<br>
+                        Near {{residentialAddress.nearby}}<br>
+                        {{residentialAddress.city}} - {{residentialAddress.pincode}}<br>
+                        {{residentialAddress.state}}, {{residentialAddress.country}}
+                    </div>
+                    <div class="col-md-2 col-sm-11" *ngIf="permanentAddress">
+                        Permanent Address
+                    </div>
+                    <div class="col-md-1 col-sm-1 text-left" *ngIf="permanentAddress">:</div>
+                    <div class="col-md-9 col-sm-12" *ngIf="permanentAddress">
+                        {{permanentAddress.house_number}}, {{permanentAddress.street_name}}
+                        , {{permanentAddress.locality}}<br>
+                        Near {{permanentAddress.nearby}}<br>
+                        {{permanentAddress.city}} - {{permanentAddress.pincode}}<br>
+                        {{permanentAddress.state}}, {{permanentAddress.country}}
+                    </div>
+                </div>
+            </div>
+        </mat-card-content>
+    </mat-card>
+</div>
